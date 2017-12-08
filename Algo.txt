@@ -1,0 +1,14 @@
+While Encore_des_ennemis {
+    AggregateMessage {
+        sendMessage : if attaque_possible attaque else deplacement
+        mergeMessage : {
+            maj des pv, positions,
+        }
+    }
+
+    joinVertices (messages, Sommet)
+
+    map {
+        check if no destinataire (nouveau destinataire) else encore_des_ennemis = false
+    }
+}
