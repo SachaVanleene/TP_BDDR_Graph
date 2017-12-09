@@ -1,5 +1,5 @@
 class Solar extends GameEntity {
-  override def health: Int = 363
+  override var health: Int = 363
 
   override def armor: Int = 44
 
