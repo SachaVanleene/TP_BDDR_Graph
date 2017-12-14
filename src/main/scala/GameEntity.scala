@@ -12,9 +12,13 @@ abstract class GameEntity extends java.io.Serializable{
     return this
   }
 
+
+  var id_graph : VertexId = 1L
+  var team : Team = null
   def regeneration : Int
   def damage_reduction : Int
   def armor : Int
+  def max_health : Int
   def max_health : Int
   var health : Int
   def attaque : Int
@@ -28,6 +32,9 @@ abstract class GameEntity extends java.io.Serializable{
     position = new Position (x,y,z)
   }
 
+  def setTeam (teamn: Team) : Unit = {
+    team = teamn
+  }
   def MovingToTarget(position: Position): (Int,Int) = {
     val diffx: Int = Math.abs((this.position.x - position.x))
     val diffy: Int = Math.abs((this.position.y - position.y))
@@ -61,4 +68,10 @@ abstract class GameEntity extends java.io.Serializable{
         case 3 => this.position.z = this.position.z + mvt
       }
   }
+
+  def setId (vertexId: VertexId) : Unit = {
+    id_graph = vertexId
+  }
+
+ }
 }
