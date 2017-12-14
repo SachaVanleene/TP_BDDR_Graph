@@ -1,3 +1,5 @@
+import org.apache.spark.graphx.VertexId
+
 import scala.util.Random
 
 class Solar extends GameEntity {
@@ -14,6 +16,25 @@ class Solar extends GameEntity {
   override def attaque: Int = 10
 
   val range : Double = 110
+
+  def Update (vertexId: VertexId, attaque : Int, indice : Int, mvt : Int) : GameEntity = {
+    val new_entity = new Solar()
+    new_entity.id_graph = this.id_graph
+    new_entity.team = this.team
+    new_entity.health = this.health
+    new_entity.position = this.position
+
+    new_entity.health = this.reduceHealth(attaque)
+    new_entity.position = this.position
+
+    indice match {
+      case 1 => new_entity.position.x = new_entity.position.x + mvt
+      case 2 => new_entity.position.y = new_entity.position.y + mvt
+      case 3 => new_entity.position.z = new_entity.position.z + mvt
+    }
+    println("ID : " + vertexId + " et " + this.position.x)
+    return new_entity
+  }
 
   def Attaque (ennemy: GameEntity) : Int = {
     val distance = position.Distance(ennemy.position)

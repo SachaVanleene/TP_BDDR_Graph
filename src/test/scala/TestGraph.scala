@@ -196,7 +196,7 @@ object TestGraph  {
       val dist2: RDD[String] =
         newgraph.triplets.map(triplet =>
           //"APRES" + triplet.srcAttr.toString + " se trouve à une distance de " + triplet.srcAttr.position.Distance(triplet.dstAttr.position) + " vis à vis de  " + triplet.dstAttr.toString)
-          "APRES : " + triplet.srcAttr.toString + " se trouve à un x de " + triplet.srcAttr.position.x.toString() + " vis à vis de  " + triplet.dstAttr.toString)
+          "APRES : " + triplet.srcAttr.toString + " se trouve à un x de " + triplet.srcAttr.health + " vis à vis de  " + triplet.dstAttr.toString)
       //Print distance
       dist2.collect.foreach(println(_))
 

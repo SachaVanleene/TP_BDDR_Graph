@@ -4,13 +4,7 @@ abstract class GameEntity extends java.io.Serializable{
   //def Update(b: GameEntity): GameEntity = ???
 
 
-  def Update (vertexId: VertexId, attaque : Int, indice : Int, mvt : Int) : GameEntity = {
-    //println ("Mouvement: " + mvt + " " + indice)
-    this.reduceHealth(attaque)
-    this.Move(indice, mvt)
-    println("ID : " + vertexId + " et " + this.position.x)
-    return this
-  }
+  def Update (vertexId: VertexId, attaque : Int, indice : Int, mvt : Int) : GameEntity
 
 
   var id_graph : VertexId = 1L
@@ -54,10 +48,10 @@ abstract class GameEntity extends java.io.Serializable{
     }
   }
 
-  def reduceHealth(degat : Int): Unit ={
+  def reduceHealth(degat : Int): Int ={
     var new_health = this.health - degat + regeneration
     if (new_health > max_health) {new_health = max_health}
-    this.health = new_health
+    return new_health
   }
 
   def Move(indice : Int, mvt : Int) : Unit = {
