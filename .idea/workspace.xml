@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="702aa397-b856-467f-94d6-7a4d59369d7b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/Team.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/GameEntity.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/GameEntity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/test-classes/TestGraph$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/test-classes/TestGraph$$anonfun$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/test-classes/TestGraph$$anonfun$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/test-classes/TestGraph$$anonfun$2.class" />
@@ -17,7 +16,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/test-classes/TestGraph.class" afterPath="$PROJECT_DIR$/target/scala-2.11/test-classes/TestGraph.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/GameEntity.scala" afterPath="$PROJECT_DIR$/src/main/scala/GameEntity.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/TestGraph.scala" afterPath="$PROJECT_DIR$/src/test/scala/TestGraph.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,7 +35,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TestGraph.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestGraph.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/TestGraph.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1839">
@@ -79,14 +77,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameEntity.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameEntity.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/GameEntity.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="68" column="7" lean-forward="false" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="7" />
-              <folding>
-                <marker date="1513292077635" expanded="true" signature="95:2079" ph="{...}" />
-              </folding>
+            <state relative-caret-position="160">
+              <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -178,8 +174,8 @@
         <option value="$PROJECT_DIR$/src/main/scala/Barbares_Orc.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/RealTeam.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Team.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/GameEntity.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/TestGraph.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/GameEntity.scala" />
       </list>
     </option>
   </component>
@@ -567,6 +563,14 @@
       <option name="presentableId" value="Default" />
       <updated>1512675631919</updated>
     </task>
+    <task id="LOCAL-00001" summary="Boucle">
+      <created>1513292102188</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1513292102188</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -666,6 +670,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Boucle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Boucle" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="2" />
@@ -750,9 +758,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding>
-            <marker date="1513292077635" expanded="true" signature="95:2079" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -788,9 +794,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="3" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-          <folding>
-            <marker date="1513292077635" expanded="true" signature="95:2079" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -871,9 +875,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-          <folding>
-            <marker date="1513292077635" expanded="true" signature="95:2079" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -930,9 +932,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-          <folding>
-            <marker date="1513292077635" expanded="true" signature="95:2079" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1051,16 +1051,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/GameEntity.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="68" column="7" lean-forward="false" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="7" />
-          <folding>
-            <marker date="1513292077635" expanded="true" signature="95:2079" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/TestGraph.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1839">
@@ -1068,6 +1058,14 @@
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/GameEntity.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="20" column="22" lean-forward="false" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>

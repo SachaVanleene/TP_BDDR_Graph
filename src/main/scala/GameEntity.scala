@@ -19,7 +19,6 @@ abstract class GameEntity extends java.io.Serializable{
   def damage_reduction : Int
   def armor : Int
   def max_health : Int
-  def max_health : Int
   var health : Int
   def attaque : Int
   def move : Int = 4
@@ -73,5 +72,5 @@ abstract class GameEntity extends java.io.Serializable{
     id_graph = vertexId
   }
 
- }
+
 }
