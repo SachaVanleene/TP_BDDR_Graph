@@ -12,7 +12,10 @@ abstract class GameEntity extends java.io.Serializable{
     return this
   }
 
+  def regeneration : Int
+  def damage_reduction : Int
   def armor : Int
+  def max_health : Int
   var health : Int
   def attaque : Int
   def move : Int = 4
@@ -46,7 +49,9 @@ abstract class GameEntity extends java.io.Serializable{
   }
 
   def reduceHealth(degat : Int): Unit ={
-    this.health = this.health - degat
+    var new_health = this.health - degat + regeneration
+    if (new_health > max_health) {new_health = max_health}
+    this.health = new_health
   }
 
   def Move(indice : Int, mvt : Int) : Unit = {

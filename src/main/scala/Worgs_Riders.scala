@@ -3,6 +3,12 @@ import scala.util.Random
 class Worgs_Riders extends  GameEntity {
   override var health: Int = 13
 
+  override val  max_health : Int = 13
+
+  def damage_reduction : Int = 0
+
+  override def regeneration: Int =  0
+
   override def armor: Int = 18
 
   override def attaque: Int = 50

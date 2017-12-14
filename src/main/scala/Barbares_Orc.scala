@@ -5,6 +5,12 @@ class Barbares_Orc extends GameEntity {
 
   override def armor: Int = 17
 
+  override val  max_health : Int = 142
+
+  def damage_reduction : Int = 0
+
+  override def regeneration: Int =  0
+
   override def attaque: Int = 50
 
   val range : Double = 10

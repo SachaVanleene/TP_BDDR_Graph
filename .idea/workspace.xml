@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="702aa397-b856-467f-94d6-7a4d59369d7b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/GameEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Solar.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/test-classes/TestGraph$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/test-classes/TestGraph$$anonfun$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/test-classes/TestGraph$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/test-classes/TestGraph$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Barbares_Orc.scala" afterPath="$PROJECT_DIR$/src/main/scala/Barbares_Orc.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/GameEntity.scala" afterPath="$PROJECT_DIR$/src/main/scala/GameEntity.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Solar.scala" afterPath="$PROJECT_DIR$/src/main/scala/Solar.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Warlord.scala" afterPath="$PROJECT_DIR$/src/main/scala/Warlord.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Worgs_Riders.scala" afterPath="$PROJECT_DIR$/src/main/scala/Worgs_Riders.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/TestGraph.scala" afterPath="$PROJECT_DIR$/src/test/scala/TestGraph.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TestGraph.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestGraph.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/TestGraph.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="132" column="67" lean-forward="false" selection-start-line="132" selection-start-column="67" selection-end-line="132" selection-end-column="67" />
+            <state relative-caret-position="499">
+              <caret line="136" column="1" lean-forward="true" selection-start-line="136" selection-start-column="1" selection-end-line="136" selection-end-column="1" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -44,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameEntity.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameEntity.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/GameEntity.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+            <state relative-caret-position="252">
+              <caret line="52" column="35" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -57,8 +51,8 @@
       <file leaf-file-name="Position.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Position.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="5" selection-end-column="3" />
+            <state relative-caret-position="189">
+              <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -67,8 +61,8 @@
       <file leaf-file-name="Solar.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Solar.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+            <state relative-caret-position="189">
+              <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -77,8 +71,8 @@
       <file leaf-file-name="Worgs_Riders.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Worgs_Riders.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+            <state relative-caret-position="189">
+              <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -87,10 +81,10 @@
       <file leaf-file-name="Warlord.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Warlord.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+            <state relative-caret-position="189">
+              <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
               <folding>
-                <marker date="1513276009256" expanded="true" signature="231:1519" ph="{...}" />
+                <marker date="1513286084068" expanded="true" signature="344:1632" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -100,9 +94,9 @@
         <entry file="file://$PROJECT_DIR$/src/main/scala/Barbares_Orc.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="223">
-              <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+              <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
               <folding>
-                <marker date="1513276013272" expanded="true" signature="236:1367" ph="{...}" />
+                <marker date="1513286084089" expanded="true" signature="349:1480" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -142,12 +136,12 @@
         <option value="$PROJECT_DIR$/src/test/scala/SimpleScalaSpark.scala" />
         <option value="$PROJECT_DIR$/Algo.txt" />
         <option value="$PROJECT_DIR$/src/main/scala/Position.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/GameEntity.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/TestGraph.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Solar.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Worgs_Riders.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Warlord.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Barbares_Orc.scala" />
-        <option value="$PROJECT_DIR$/src/test/scala/TestGraph.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/GameEntity.scala" />
       </list>
     </option>
   </component>
@@ -503,7 +497,7 @@
         <state relative-caret-position="105">
           <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
           <folding>
-            <marker date="1513276009256" expanded="true" signature="231:1519" ph="{...}" />
+            <marker date="1513286084068" expanded="true" signature="344:1632" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -513,7 +507,7 @@
         <state relative-caret-position="105">
           <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
           <folding>
-            <marker date="1513276013272" expanded="true" signature="236:1367" ph="{...}" />
+            <marker date="1513286084089" expanded="true" signature="349:1480" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -573,7 +567,7 @@
         <state relative-caret-position="105">
           <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
           <folding>
-            <marker date="1513276009256" expanded="true" signature="231:1519" ph="{...}" />
+            <marker date="1513286084068" expanded="true" signature="344:1632" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -583,7 +577,7 @@
         <state relative-caret-position="21">
           <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
           <folding>
-            <marker date="1513276013272" expanded="true" signature="236:1367" ph="{...}" />
+            <marker date="1513286084089" expanded="true" signature="349:1480" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -635,7 +629,7 @@
         <state relative-caret-position="105">
           <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
           <folding>
-            <marker date="1513276009256" expanded="true" signature="231:1519" ph="{...}" />
+            <marker date="1513286084068" expanded="true" signature="344:1632" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -645,7 +639,7 @@
         <state relative-caret-position="21">
           <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
           <folding>
-            <marker date="1513276013272" expanded="true" signature="236:1367" ph="{...}" />
+            <marker date="1513286084089" expanded="true" signature="349:1480" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -665,42 +659,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Position.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="5" selection-end-column="3" />
+        <state relative-caret-position="189">
+          <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/GameEntity.scala">
+    <entry file="file://$PROJECT_DIR$/src/test/scala/TestGraph.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-          <folding />
+        <state relative-caret-position="499">
+          <caret line="136" column="1" lean-forward="true" selection-start-line="136" selection-start-column="1" selection-end-line="136" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Solar.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        <state relative-caret-position="189">
+          <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Worgs_Riders.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        <state relative-caret-position="189">
+          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Warlord.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        <state relative-caret-position="189">
+          <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
           <folding>
-            <marker date="1513276009256" expanded="true" signature="231:1519" ph="{...}" />
+            <marker date="1513286084068" expanded="true" signature="344:1632" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -708,20 +704,18 @@
     <entry file="file://$PROJECT_DIR$/src/main/scala/Barbares_Orc.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
-          <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+          <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
           <folding>
-            <marker date="1513276013272" expanded="true" signature="236:1367" ph="{...}" />
+            <marker date="1513286084089" expanded="true" signature="349:1480" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/TestGraph.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/GameEntity.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="132" column="67" lean-forward="false" selection-start-line="132" selection-start-column="67" selection-end-line="132" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="252">
+          <caret line="52" column="35" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>

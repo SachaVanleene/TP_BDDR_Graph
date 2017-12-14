@@ -5,6 +5,12 @@ class Warlord extends GameEntity {
 
   override def armor: Int = 27
 
+  override val  max_health : Int = 141
+
+  override def regeneration: Int =  0
+
+  def damage_reduction : Int = 0
+
   override def attaque: Int = 50
 
   val range : Double = 10
