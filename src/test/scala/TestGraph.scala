@@ -85,8 +85,8 @@ object TestGraph  {
         Edge(11L, 15L, bo2.position.Distance(solar.position)),
         Edge(12L, 15L, bo3.position.Distance(solar.position)),
         Edge(13L, 15L, bo4.position.Distance(solar.position)),
-        Edge(14L, 15L, warlord.position.Distance(solar.position))
-       // Edge(15L,1L,solar.position.Distance((wr1.position)))
+        Edge(14L, 15L, warlord.position.Distance(solar.position)),
+        Edge(15L,1L,solar.position.Distance((wr1.position)))
       ))
 
     // Define a default user in case there are relationship with missing user
@@ -96,29 +96,26 @@ object TestGraph  {
     //Calculate distance
     val dist: RDD[String] =
       graph.triplets.map(triplet =>
-        "AVANT" + triplet.srcAttr.toString + " se trouve à une distance de " + triplet.attr.toString + " vis à vis de  " + triplet.dstAttr.toString)
+        "AVANT : " + triplet.srcAttr.toString + " se trouve à une distance de " + triplet.attr.toString + " vis à vis de  " + triplet.dstAttr.toString)
     //Print distance
     dist.collect.foreach(println(_))
     //aggregatemessageTest
     val attaqueOrder: VertexRDD[(Int,Int,Int)] = graph.aggregateMessages[(Int,Int,Int)]( // attaque, indice mouvement, Mouvement effectif
       triplet => {
         if (triplet.srcAttr.position.Distance((triplet.dstAttr.position)) <= triplet.srcAttr.range) { //if in range
-          triplet.sendToDst(triplet.srcAttr.attaque,0,0)
-          println(triplet.srcAttr.toString + "attaque" + triplet.dstAttr.toString)
-          //println("lol")
+          triplet.sendToDst(triplet.srcAttr.Attaque(triplet.dstAttr),0,0)
+          println(triplet.srcAttr.toString + " attaque " + triplet.dstAttr.toString)
         } else {
           triplet.sendToSrc(0,triplet.srcAttr.MovingToTarget(triplet.dstAttr.position)._1,triplet.srcAttr.MovingToTarget(triplet.dstAttr.position)._2)
-          println(triplet.srcAttr.toString + "moving to " + triplet.dstAttr.toString)
+          println(triplet.srcAttr.toString + " moving to " + triplet.dstAttr.toString)
         }
       },
       (a, b) => (a._1+b._1,a._2+b._2,a._3+b._3)
     )
 
     val newgraph = graph.joinVertices(attaqueOrder) (
-      (a,b,c) => {
-            b.Update(c._1,c._2,c._3)
-      }
-
+      //(a,b,c) => b.Update(c._1,c._2,c._3)
+      (a,b,c) => b.Update(a,c._1,c._2,c._3)
     )
 
 
@@ -132,8 +129,9 @@ object TestGraph  {
 
     val dist2: RDD[String] =
       newgraph.triplets.map(triplet =>
-        "APRES" + triplet.srcAttr.toString + " se trouve à une distance de " + triplet.srcAttr.position.Distance(triplet.dstAttr.position)+ " vis à vis de  " + triplet.dstAttr.toString)
-    //Print distance
+        //"APRES" + triplet.srcAttr.toString + " se trouve à une distance de " + triplet.srcAttr.position.Distance(triplet.dstAttr.position) + " vis à vis de  " + triplet.dstAttr.toString)
+        "APRES : " + triplet.srcAttr.toString + " se trouve à un x de " + triplet.srcAttr.position.x.toString() + " vis à vis de  " + triplet.dstAttr.toString)
+        //Print distance
     dist2.collect.foreach(println(_))
   }
 }

@@ -1,19 +1,26 @@
+import org.apache.spark.graphx.VertexId
+
 abstract class GameEntity extends java.io.Serializable{
-  def Update(b: GameEntity): GameEntity = ???
+  //def Update(b: GameEntity): GameEntity = ???
 
 
-  def Update (attaque : Int, indice : Int, mvt : Int) : GameEntity = {
+  def Update (vertexId: VertexId, attaque : Int, indice : Int, mvt : Int) : GameEntity = {
+    //println ("Mouvement: " + mvt + " " + indice)
     this.reduceHealth(attaque)
     this.Move(indice, mvt)
+    println("ID : " + vertexId + " et " + this.position.x)
     return this
   }
 
   def armor : Int
   var health : Int
   def attaque : Int
-  val move : Int = 4
-  val range : Double = 10
+  def move : Int = 4
+  def range : Double
   var position: Position = new Position(0, 0, 0)
+
+  def Attaque (ennemy: GameEntity) : Int
+
   def setPosition(x : Int, y : Int, z : Int) : Unit = {
     position = new Position (x,y,z)
   }
@@ -27,7 +34,7 @@ abstract class GameEntity extends java.io.Serializable{
       if (diffx > diffz) {
             return(1,move*position.Sens(position.x,1))
       } else {
-        return (2, move * position.Sens(position.y, 2))
+        return (3, move * position.Sens(position.z, 3))
       }
     }else {
       if(diffy > diffz){
@@ -48,6 +55,5 @@ abstract class GameEntity extends java.io.Serializable{
         case 2 => this.position.y = this.position.y + mvt
         case 3 => this.position.z = this.position.z + mvt
       }
-
   }
 }
