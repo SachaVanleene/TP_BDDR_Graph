@@ -8,7 +8,7 @@ import org.apache.spark.rdd.RDD
 
 import org.apache.log4j.{Level, Logger}
 
-object TestGraph  {
+object NewTestGraph  {
 
   def main(args: Array[String]) {
 
@@ -42,87 +42,22 @@ object TestGraph  {
     wr2.setPosition(100, 32, 0)
     wr1.setId(2L)
 
-    val wr3 = new Worgs_Riders
-    wr3.setPosition(100, 30, 0)
-    wr1.setId(3L)
-
-    val wr4 = new Worgs_Riders
-    wr4.setPosition(108, 22, 0)
-    wr1.setId(4L)
-
-    val wr5 = new Worgs_Riders
-    wr5.setPosition(110, 20, 0)
-    wr1.setId(5L)
-
-    val wr6 = new Worgs_Riders
-    wr6.setPosition(110, 18, 0)
-    wr1.setId(6L)
-
-    val wr7 = new Worgs_Riders
-    wr7.setPosition(100, 11, 0)
-    wr1.setId(7L)
-
-    val wr8 = new Worgs_Riders
-    wr8.setPosition(111, 10, 0)
-    wr1.setId(8L)
-
-    val wr9 = new Worgs_Riders
-    wr9.setPosition(110, 8, 0)
-    wr1.setId(9L)
-
-    //Barbare_orc
-    val bo1 = new Barbares_Orc
-    bo1.setPosition(130, 22, 0)
-    wr1.setId(10L)
-
-    val bo2 = new Barbares_Orc
-    bo2.setPosition(130, 20, 0)
-    wr1.setId(11L)
-
-    val bo3 = new Barbares_Orc
-    bo3.setPosition(130, 18, 0)
-    wr1.setId(12L)
-
-    val bo4 = new Barbares_Orc
-    bo4.setPosition(130, 16, 0)
-    wr1.setId(13L)
-
-    //Warlord
-    val warlord = new Warlord
-    warlord.setPosition(140, 19, 0)
-    wr1.setId(14L)
-
     //addMemeberToTeam
     team_alpha.addMemeber(solar)
 
-    val liste_ennemi = List(wr1, wr2, wr3, wr4, wr5, wr6, wr7, wr8, wr9, bo1, bo2, bo3, bo4, warlord)
+    val liste_ennemi = List(wr1, wr2)
     team_beta.addMultipleMemeber(liste_ennemi)
     // Create an RDD for the vertices
     val VertexEntity: RDD[(VertexId, GameEntity)] =
       sc.parallelize(Array(
-        (1L, wr1), (2L, wr2), (3L, wr3), (4L, wr4), (5L, wr5), (6L, wr6), (7L, wr7), (8L, wr8), (9L, wr9)
-        , (10L, bo1), (11L, bo2), (12L, bo3), (13L, bo4)
-        , (14L, warlord)
-        , (15L, solar)))
+        (1L, wr1), (2L, wr2), (15L, solar)))
 
     // Create an RDD for edges
-    val EdgeDistance: RDD[Edge[Double]] =
+    val EdgeDistance: RDD[Edge[Int]] =
       sc.parallelize(Array(
-        Edge(1L, 15L, wr1.position.Distance(solar.position)),
-        Edge(2L, 15L, wr2.position.Distance(solar.position)),
-        Edge(3L, 15L, wr3.position.Distance(solar.position)),
-        Edge(4L, 15L, wr4.position.Distance(solar.position)),
-        Edge(5L, 15L, wr5.position.Distance(solar.position)),
-        Edge(6L, 15L, wr6.position.Distance(solar.position)),
-        Edge(7L, 15L, wr7.position.Distance(solar.position)),
-        Edge(8L, 15L, wr8.position.Distance(solar.position)),
-        Edge(9L, 15L, wr9.position.Distance(solar.position)),
-        Edge(10L, 15L, bo1.position.Distance(solar.position)),
-        Edge(11L, 15L, bo2.position.Distance(solar.position)),
-        Edge(12L, 15L, bo3.position.Distance(solar.position)),
-        Edge(13L, 15L, bo4.position.Distance(solar.position)),
-        Edge(14L, 15L, warlord.position.Distance(solar.position)),
-        Edge(15L, 1L, solar.position.Distance((wr1.position)))
+        Edge(1L, 15L, 1),
+        Edge(2L, 15L, 1),
+        Edge(1L, 2L, 0)
       ))
 
     // Define a default user in case there are relationship with missing user
@@ -132,7 +67,7 @@ object TestGraph  {
     //Calculate distance
     val dist: RDD[String] =
       graph.triplets.map(triplet =>
-        "AVANT : " + triplet.srcAttr.toString + " se trouve à une distance de " + triplet.attr.toString + " vis à vis de  " + triplet.dstAttr.toString)
+        "AVANT : " + triplet.srcAttr.toString + " est " + triplet.attr.toString + " vis à vis de  " + triplet.dstAttr.toString)
     //Print distance
     dist.collect.foreach(println(_))
     //aggregatemessageTest
@@ -140,12 +75,16 @@ object TestGraph  {
     while (!fight_ended) {
       val attaqueOrder: VertexRDD[(Int, Int, Int)] = graph.aggregateMessages[(Int, Int, Int)]( // attaque, indice mouvement, Mouvement effectif
         triplet => {
-          if (triplet.srcAttr.position.Distance((triplet.dstAttr.position)) <= triplet.srcAttr.range) { //if in range
-            triplet.sendToDst(triplet.srcAttr.Attaque(triplet.dstAttr), 0, 0)
-            println(triplet.srcAttr.toString + " attaque " + triplet.dstAttr.toString)
-          } else {
-            triplet.sendToSrc(0, triplet.srcAttr.MovingToTarget(triplet.dstAttr.position)._1, triplet.srcAttr.MovingToTarget(triplet.dstAttr.position)._2)
-            println(triplet.srcAttr.toString + " moving to " + triplet.dstAttr.toString)
+          if (triplet.attr.toString == 1) { // ennemis
+            if (triplet.srcAttr.position.Distance((triplet.dstAttr.position)) <= triplet.srcAttr.range) { //if in range
+              triplet.sendToDst(triplet.srcAttr.Attaque(triplet.dstAttr), 0, 0)
+              println(triplet.srcAttr.toString + " attaque " + triplet.dstAttr.toString)
+            } else {
+              triplet.sendToSrc(0, triplet.srcAttr.MovingToTarget(triplet.dstAttr.position)._1, triplet.srcAttr.MovingToTarget(triplet.dstAttr.position)._2)
+              println(triplet.srcAttr.toString + " moving to " + triplet.dstAttr.toString)
+            }
+          } else { // if alliés
+
           }
         },
         (a, b) => (a._1 + b._1, a._2 + b._2, a._3 + b._3)
