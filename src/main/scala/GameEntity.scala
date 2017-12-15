@@ -15,7 +15,7 @@ abstract class GameEntity extends java.io.Serializable{
   def max_health : Int
   var health : Int
   def attaque : Int
-  def move : Int = 4
+  def move : Int = 30
   def range : Double
   var position: Position = new Position(0, 0, 0)
 

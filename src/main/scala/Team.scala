@@ -11,6 +11,7 @@
   def addMemeber (gameEntity: GameEntity) : Unit = {
     member = gameEntity :: member
     gameEntity.setTeam(this)
+    println("Ajout de machin avec ca de hp " + gameEntity.health)
   }
 
     def addMultipleMemeber(liste : List[GameEntity]) : Unit = {
@@ -18,12 +19,12 @@
     }
 
 
-  def getNextTarget(team: Team) : GameEntity = {
-    val listepotentielle  : List[GameEntity] = team.member.filter(p=>p.health>0)
-    if (listepotentielle == null){
+  def getNextTarget() : GameEntity = {
+    val listepotentielle  : List[GameEntity] = member.filter(p=> p.health>0 )
+    if (listepotentielle.isEmpty){
       return null
     } else {
-      listepotentielle(1)
+      listepotentielle(0)
     }
   }
 }

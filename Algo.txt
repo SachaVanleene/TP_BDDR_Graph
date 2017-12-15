@@ -12,3 +12,11 @@ While Encore_des_ennemis {
         check if no destinataire (nouveau destinataire) else encore_des_ennemis = false
     }
 }
+
+
+pb : positon mal calculé
+new target al calculé
+
+
+Comment suprimer un vertice
+COmment modifier un edge

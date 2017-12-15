@@ -2,7 +2,9 @@ import org.apache.hadoop.yarn.util.RackResolver
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
 import org.apache.spark._
+import org.apache.spark.graphx.PartitionStrategy.RandomVertexCut
 import org.apache.spark.graphx._
+import spire.std.map
 // To make some of the examples work we will also need RDD
 import org.apache.spark.rdd.RDD
 
@@ -40,57 +42,57 @@ object TestGraph  {
 
     val wr2 = new Worgs_Riders
     wr2.setPosition(100, 32, 0)
-    wr1.setId(2L)
+    wr2.setId(2L)
 
     val wr3 = new Worgs_Riders
     wr3.setPosition(100, 30, 0)
-    wr1.setId(3L)
+    wr3.setId(3L)
 
     val wr4 = new Worgs_Riders
     wr4.setPosition(108, 22, 0)
-    wr1.setId(4L)
+    wr4.setId(4L)
 
     val wr5 = new Worgs_Riders
     wr5.setPosition(110, 20, 0)
-    wr1.setId(5L)
+    wr5.setId(5L)
 
     val wr6 = new Worgs_Riders
     wr6.setPosition(110, 18, 0)
-    wr1.setId(6L)
+    wr6.setId(6L)
 
     val wr7 = new Worgs_Riders
     wr7.setPosition(100, 11, 0)
-    wr1.setId(7L)
+    wr7.setId(7L)
 
     val wr8 = new Worgs_Riders
     wr8.setPosition(111, 10, 0)
-    wr1.setId(8L)
+    wr8.setId(8L)
 
     val wr9 = new Worgs_Riders
     wr9.setPosition(110, 8, 0)
-    wr1.setId(9L)
+    wr9.setId(9L)
 
     //Barbare_orc
     val bo1 = new Barbares_Orc
     bo1.setPosition(130, 22, 0)
-    wr1.setId(10L)
+    bo1.setId(10L)
 
     val bo2 = new Barbares_Orc
     bo2.setPosition(130, 20, 0)
-    wr1.setId(11L)
+    bo2.setId(11L)
 
     val bo3 = new Barbares_Orc
     bo3.setPosition(130, 18, 0)
-    wr1.setId(12L)
+    bo3.setId(12L)
 
     val bo4 = new Barbares_Orc
     bo4.setPosition(130, 16, 0)
-    wr1.setId(13L)
+    bo4.setId(13L)
 
     //Warlord
     val warlord = new Warlord
     warlord.setPosition(140, 19, 0)
-    wr1.setId(14L)
+    warlord.setId(14L)
 
     //addMemeberToTeam
     team_alpha.addMemeber(solar)
@@ -152,64 +154,70 @@ object TestGraph  {
       )
 
 
-      val newgraph = graph.joinVertices(attaqueOrder)(
+      val graph_after_attack_move : Graph[GameEntity,Double] = graph.joinVertices(attaqueOrder)(
         //(a,b,c) => b.Update(c._1,c._2,c._3)
         (a, b, c) => b.Update(a, c._1, c._2, c._3)
       )
 
-      val newtarget = newgraph.mapTriplets( // Modify target if possible
+      val  newEdge : RDD[Edge[Double]] = graph_after_attack_move.triplets.map( // new Edge
         triplet => {
+          val edge : Edge[Double] = new Edge[Double](triplet.srcId,triplet.dstId,0.toDouble)
           if (triplet.srcAttr.health > 0) {
             if (triplet.dstAttr.health < 0) {
-              val test = triplet.srcAttr.team.getNextTarget(triplet.dstAttr.team)
+              val test = triplet.dstAttr.team.getNextTarget()
               if (test != null) {
-                //triplet.dstId = test.id_graph
-                triplet.dstId = 2L
-                triplet.dstAttr = wr2
-                //println("New target : " + test.id_graph)
+                val edge2 : Edge[Double] = new Edge[Double](triplet.srcId,triplet.dstAttr.team.getNextTarget().id_graph,0.toDouble)
+                println(triplet.srcAttr + "changing target to " + triplet.dstAttr.team.getNextTarget())
+                edge2
+                //println("New target : " + triplet.dstId)
               } else {
                 fight_ended = true
+                edge
               }
             } else {
+              edge
               //
             }
           } else {
+            edge
             //dont send msg to delete this vertice
           }
         }
       )
-      //Send msg to people that are still alive
-      val checkTarget: VertexRDD[(Boolean)] = newtarget.aggregateMessages[(Boolean)]( //(ABesoinDeChanger,Atrouverunetarget,IdTarget)
-        triplet => {
-          if (triplet.srcAttr.health > 0) {
-            triplet.sendToSrc(true)
-          }
-        },
-        (a, b) => a && b
 
-      )
+      //Merge both Edge
+      val graph_with_new_target : Graph[GameEntity,Double] = Graph(
+        graph_after_attack_move.vertices,
+        graph_after_attack_move.edges.union(newEdge)
+      ).partitionBy(RandomVertexCut).
+        groupEdges( (a,b) => a+b  )
 
 
-      val graph_modify = newgraph.joinVertices(checkTarget)( // delete entity using join
-        (a, b, c) => b
-      )
+      val newgraph : Graph[GameEntity,Double] =
+        graph_with_new_target.subgraph(
+          t=> t.dstAttr.health>0 && t.srcAttr.health>0
+        )
+      //Remove edge and vertice uselesss
+
+
+      graph = newgraph
 
       // AFFICHAGE
-      val attaque: VertexRDD[String] =
+      val  attaque: VertexRDD[String] =
         attaqueOrder.mapValues {
           a => a.toString
         }
 
       attaque.collect.foreach(println(_))
 
-      val dist2: RDD[String] =
-        newgraph.triplets.map(triplet =>
+      val  dist2: RDD[String] =
+        graph.triplets.map(triplet =>
           //"APRES" + triplet.srcAttr.toString + " se trouve à une distance de " + triplet.srcAttr.position.Distance(triplet.dstAttr.position) + " vis à vis de  " + triplet.dstAttr.toString)
           "APRES : " + triplet.srcAttr.toString + " se trouve à un x de " + triplet.srcAttr.health + " vis à vis de  " + triplet.dstAttr.toString)
       //Print distance
       dist2.collect.foreach(println(_))
 
-      graph = graph_modify
+
     }
 
   }

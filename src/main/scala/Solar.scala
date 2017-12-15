@@ -7,6 +7,8 @@ class Solar extends GameEntity {
 
   override val  max_health : Int = 363
 
+  override def move : Int = 0
+
   def damage_reduction : Int = 15
 
   override def regeneration: Int = 15
@@ -25,6 +27,7 @@ class Solar extends GameEntity {
     new_entity.position = this.position
 
     new_entity.health = this.reduceHealth(attaque)
+    this.health -= attaque
     new_entity.position = this.position
 
     indice match {
@@ -32,7 +35,7 @@ class Solar extends GameEntity {
       case 2 => new_entity.position.y = new_entity.position.y + mvt
       case 3 => new_entity.position.z = new_entity.position.z + mvt
     }
-    println("ID : " + vertexId + " et " + this.position.x)
+   // println("ID : " + vertexId + " et " + this.position.x)
     return new_entity
   }
 

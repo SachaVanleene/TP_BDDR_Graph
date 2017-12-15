@@ -100,7 +100,7 @@ object NewTestGraph  {
         triplet => {
           if (triplet.srcAttr.health > 0) {
             if (triplet.dstAttr.health < 0) {
-              val test = triplet.srcAttr.team.getNextTarget(triplet.dstAttr.team)
+              val test = triplet.dstAttr.team.getNextTarget()
               if (test != null) {
                 //triplet.dstId = test.id_graph
                 triplet.dstId = 2L

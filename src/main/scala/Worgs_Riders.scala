@@ -25,6 +25,7 @@ class Worgs_Riders extends  GameEntity {
     new_entity.position = this.position
 
     new_entity.health = this.reduceHealth(attaque)
+    this.health -= attaque
     new_entity.position = this.position
 
     indice match {
@@ -32,7 +33,7 @@ class Worgs_Riders extends  GameEntity {
       case 2 => new_entity.position.y = new_entity.position.y + mvt
       case 3 => new_entity.position.z = new_entity.position.z + mvt
     }
-    println("ID : " + vertexId + " et " + this.position.x)
+    //println("ID : " + vertexId + " et " + this.position.x)
     return new_entity
   }
 
