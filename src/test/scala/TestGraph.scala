@@ -124,7 +124,7 @@ object TestGraph  {
         Edge(12L, 15L, bo3.position.Distance(solar.position)),
         Edge(13L, 15L, bo4.position.Distance(solar.position)),
         Edge(14L, 15L, warlord.position.Distance(solar.position)),
-        Edge(15L, 1L, solar.position.Distance((wr1.position)))
+        Edge(15L, 14L, solar.position.Distance((wr1.position)))
       ))
 
     // Define a default user in case there are relationship with missing user
@@ -152,8 +152,7 @@ object TestGraph  {
         },
         (a, b) => (a._1 + b._1, a._2 + b._2, a._3 + b._3)
       )
-
-
+      
       val graph_after_attack_move : Graph[GameEntity,Double] = graph.joinVertices(attaqueOrder)(
         //(a,b,c) => b.Update(c._1,c._2,c._3)
         (a, b, c) => b.Update(a, c._1, c._2, c._3)

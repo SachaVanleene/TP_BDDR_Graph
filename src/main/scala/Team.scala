@@ -18,9 +18,18 @@
       liste.foreach( g=>addMemeber(g))
     }
 
+   def deleteMember(gameEntity: GameEntity) : Unit = {
+     println("BEFORE :" + this.member)
+     println(gameEntity.id_graph)
+     println("AFTER :" + member.filter(_.id_graph != gameEntity.id_graph))
+     member = member.filter(_.id_graph != gameEntity.id_graph)
+   }
+
 
   def getNextTarget() : GameEntity = {
     val listepotentielle  : List[GameEntity] = member.filter(p=> p.health>0 )
+    println (listepotentielle(0).health);
+    println (listepotentielle);
     if (listepotentielle.isEmpty){
       return null
     } else {

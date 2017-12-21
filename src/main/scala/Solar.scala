@@ -22,7 +22,6 @@ class Solar extends GameEntity {
   def Update (vertexId: VertexId, attaque : Int, indice : Int, mvt : Int) : GameEntity = {
     val new_entity = new Solar()
     new_entity.id_graph = this.id_graph
-    new_entity.team = this.team
     new_entity.health = this.health
     new_entity.position = this.position
 
@@ -30,7 +29,14 @@ class Solar extends GameEntity {
     this.health -= attaque
     new_entity.position = this.position
 
+    if (this.health < 0) {
+      this.team.deleteMember(this)
+    }
+
+    new_entity.team = this.team
+
     indice match {
+      case 0 =>
       case 1 => new_entity.position.x = new_entity.position.x + mvt
       case 2 => new_entity.position.y = new_entity.position.y + mvt
       case 3 => new_entity.position.z = new_entity.position.z + mvt

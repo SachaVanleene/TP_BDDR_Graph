@@ -20,13 +20,18 @@ class Worgs_Riders extends  GameEntity {
   def Update (vertexId: VertexId, attaque : Int, indice : Int, mvt : Int) : GameEntity = {
     val new_entity = new Worgs_Riders()
     new_entity.id_graph = this.id_graph
-    new_entity.team = this.team
     new_entity.health = this.health
     new_entity.position = this.position
 
     new_entity.health = this.reduceHealth(attaque)
     this.health -= attaque
     new_entity.position = this.position
+
+    if (this.health < 0) {
+      this.team.deleteMember(this)
+    }
+
+    new_entity.team = this.team
 
     indice match {
       case 1 => new_entity.position.x = new_entity.position.x + mvt
