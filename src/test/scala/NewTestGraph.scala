@@ -57,7 +57,7 @@ object NewTestGraph  {
       sc.parallelize(Array(
         Edge(1L, 15L, 1),
         Edge(2L, 15L, 1),
-        Edge(1L, 2L, 0)
+        Edge(15L, 2L, 0)
       ))
 
     // Define a default user in case there are relationship with missing user

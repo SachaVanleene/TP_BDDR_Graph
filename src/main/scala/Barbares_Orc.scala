@@ -27,11 +27,11 @@ class Barbares_Orc extends GameEntity {
     this.health -= attaque
     new_entity.position = this.position
 
-    if (this.health < 0) {
+    /*if (this.health < 0) {
       this.team.deleteMember(this)
     }
     
-    new_entity.team = this.team
+    new_entity.team = this.team*/
 
     indice match {
       case 1 => new_entity.position.x = new_entity.position.x + mvt

@@ -29,9 +29,7 @@ class Solar extends GameEntity {
     this.health -= attaque
     new_entity.position = this.position
 
-    if (this.health < 0) {
-      this.team.deleteMember(this)
-    }
+
 
     new_entity.team = this.team
 

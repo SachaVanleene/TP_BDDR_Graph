@@ -49,6 +49,7 @@ abstract class GameEntity extends java.io.Serializable{
   }
 
   def reduceHealth(degat : Int): Int ={
+    //this.team.reduceHealth(this.id_graph,degat)
     var new_health = this.health - degat + regeneration
     if (new_health > max_health) {new_health = max_health}
     return new_health

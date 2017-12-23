@@ -27,11 +27,10 @@ class Worgs_Riders extends  GameEntity {
     this.health -= attaque
     new_entity.position = this.position
 
-    if (this.health < 0) {
-      this.team.deleteMember(this)
-    }
 
     new_entity.team = this.team
+    this.team.deleteMember(this)
+    this.team.addMemeber(new_entity)
 
     indice match {
       case 1 => new_entity.position.x = new_entity.position.x + mvt

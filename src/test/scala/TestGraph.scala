@@ -124,7 +124,7 @@ object TestGraph  {
         Edge(12L, 15L, bo3.position.Distance(solar.position)),
         Edge(13L, 15L, bo4.position.Distance(solar.position)),
         Edge(14L, 15L, warlord.position.Distance(solar.position)),
-        Edge(15L, 14L, solar.position.Distance((wr1.position)))
+        Edge(15L, 1L, solar.position.Distance((wr1.position)))
       ))
 
     // Define a default user in case there are relationship with missing user
@@ -163,10 +163,17 @@ object TestGraph  {
           val edge : Edge[Double] = new Edge[Double](triplet.srcId,triplet.dstId,0.toDouble)
           if (triplet.srcAttr.health > 0) {
             if (triplet.dstAttr.health < 0) {
-              val test = triplet.dstAttr.team.getNextTarget()
+              var teamtoChoose : Team = team_alpha
+              if (triplet.srcAttr.team.name == "Alpha") {
+                teamtoChoose = team_beta
+              } else {
+                teamtoChoose = team_alpha
+              }
+              teamtoChoose.deleteMember(triplet.dstAttr)
+              val test = teamtoChoose.getNextTarget()
               if (test != null) {
-                val edge2 : Edge[Double] = new Edge[Double](triplet.srcId,triplet.dstAttr.team.getNextTarget().id_graph,0.toDouble)
-                println(triplet.srcAttr + "changing target to " + triplet.dstAttr.team.getNextTarget())
+                val edge2 : Edge[Double] = new Edge[Double](triplet.srcId,teamtoChoose.getNextTarget().id_graph,0.toDouble)
+                println(triplet.srcAttr + "changing target to " + teamtoChoose.getNextTarget())
                 edge2
                 //println("New target : " + triplet.dstId)
               } else {
@@ -193,9 +200,14 @@ object TestGraph  {
 
 
       val newgraph : Graph[GameEntity,Double] =
-        graph_with_new_target.subgraph(
-          t=> t.dstAttr.health>0 && t.srcAttr.health>0
-        )
+        graph_with_new_target.subgraph (
+         t => {
+           t.srcAttr.health > 0 && t.srcAttr.health > 0
+         },
+          (h,v) => {
+            v.health > 0
+          }
+          )
       //Remove edge and vertice uselesss
 
 
