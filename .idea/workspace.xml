@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="702aa397-b856-467f-94d6-7a4d59369d7b" name="Default" comment="it work">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Team$$anonfun$deleteMember$2.class" afterPath="" />
+    <list default="true" id="702aa397-b856-467f-94d6-7a4d59369d7b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Barbares_Orc.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Barbares_Orc.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/GameEntity.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/GameEntity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Solar.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Solar.class" />
@@ -20,14 +19,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/test-classes/TestGraph$$anonfun$main$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/test-classes/TestGraph$$anonfun$main$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/test-classes/TestGraph$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/test-classes/TestGraph$.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Barbares_Orc.scala" afterPath="$PROJECT_DIR$/src/main/scala/Barbares_Orc.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/GameEntity.scala" afterPath="$PROJECT_DIR$/src/main/scala/GameEntity.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Solar.scala" afterPath="$PROJECT_DIR$/src/main/scala/Solar.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Team.scala" afterPath="$PROJECT_DIR$/src/main/scala/Team.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Warlord.scala" afterPath="$PROJECT_DIR$/src/main/scala/Warlord.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Worgs_Riders.scala" afterPath="$PROJECT_DIR$/src/main/scala/Worgs_Riders.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/NewTestGraph.scala" afterPath="$PROJECT_DIR$/src/test/scala/NewTestGraph.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/TestGraph.scala" afterPath="$PROJECT_DIR$/src/test/scala/TestGraph.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -490,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513366985994</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Team mieux">
+      <created>1514038040336</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1514038040336</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -572,7 +570,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Boucle" />
     <MESSAGE value="it work" />
-    <option name="LAST_COMMIT_MESSAGE" value="it work" />
+    <MESSAGE value="Team mieux" />
+    <option name="LAST_COMMIT_MESSAGE" value="Team mieux" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
