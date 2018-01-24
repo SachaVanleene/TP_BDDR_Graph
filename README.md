@@ -19,6 +19,6 @@ We recommand to install :
 * **Sacha Vanleene** 
 * **Alexandre de Boé**
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
 
 
